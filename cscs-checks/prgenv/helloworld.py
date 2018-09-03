@@ -28,8 +28,13 @@ class HelloWorldBaseTest(RegressionTest):
                               'kesch:cn', 'kesch:pn', 'leone:normal',
                               'monch:compute']
 
-        self.valid_prog_environs = ['PrgEnv-cray', 'PrgEnv-gnu',
-                                    'PrgEnv-intel', 'PrgEnv-pgi']
+        #self.valid_prog_environs = ['PrgEnv-cray', 'PrgEnv-gnu',
+        #                            'PrgEnv-intel', 'PrgEnv-pgi']
+        self.valid_prog_environs = [#'PrgEnv-c2sm-pgi', 'PrgEnv-c2sm-pgi-gpu',
+                                    #'PrgEnv-c2sm-gnu', 'PrgEnv-c2sm-gnu-gpu',
+                                    #'PrgEnv-c2sm-gnu-cpp', 'PrgEnv-c2sm-cray',
+                                    'PrgEnv-c2sm-cray-gpu']
+
 
         # Removing static compilation from kesch
         if (self.current_system.name in ['kesch', 'leone', 'monch'] and
@@ -96,7 +101,14 @@ class HelloWorldTestSerial(HelloWorldBaseTest):
             'PrgEnv-cray': '',
             'PrgEnv-gnu': '',
             'PrgEnv-intel': '',
-            'PrgEnv-pgi': ''
+            'PrgEnv-pgi': '',
+            'PrgEnv-c2sm-cray': '',
+            'PrgEnv-c2sm-gnu': '',
+            'PrgEnv-c2sm-pgi': '',
+            'PrgEnv-c2sm-gnu-cpp': '',
+            'PrgEnv-c2sm-cray-gpu': '',
+            'PrgEnv-c2sm-gnu-gpu': '',
+            'PrgEnv-c2sm-pgi-gpu': ''
         }
         self.num_tasks = 1
         self.num_tasks_per_node = 1
@@ -112,7 +124,14 @@ class HelloWorldTestOpenMP(HelloWorldBaseTest):
             'PrgEnv-cray': ' -homp ',
             'PrgEnv-gnu': ' -fopenmp ',
             'PrgEnv-intel': ' -qopenmp ',
-            'PrgEnv-pgi': ' -mp '
+            'PrgEnv-pgi': ' -mp ',
+            'PrgEnv-c2sm-cray': ' -homp ',
+            'PrgEnv-c2sm-gnu': ' -fopenmp ',
+            'PrgEnv-c2sm-pgi': ' -mp ',
+            'PrgEnv-c2sm-gnu-cpp': ' -fopenmp ',
+            'PrgEnv-c2sm-cray-gpu': ' -homp ',
+            'PrgEnv-c2sm-gnu-gpu': ' -fopenmp ',
+            'PrgEnv-c2sm-pgi-gpu': ' -mp '
         }
         self.num_tasks = 1
         self.num_tasks_per_node = 1
@@ -134,7 +153,14 @@ class HelloWorldTestMPI(HelloWorldBaseTest):
             'PrgEnv-cray': '',
             'PrgEnv-gnu': '',
             'PrgEnv-intel': '',
-            'PrgEnv-pgi': ''
+            'PrgEnv-pgi': '',
+            'PrgEnv-c2sm-cray': '',
+            'PrgEnv-c2sm-gnu': '',
+            'PrgEnv-c2sm-pgi': '',
+            'PrgEnv-c2sm-gnu-cpp': '',
+            'PrgEnv-c2sm-cray-gpu': '',
+            'PrgEnv-c2sm-gnu-gpu': '',
+            'PrgEnv-c2sm-pgi-gpu': ''
         }
 
         # for the MPI test the self.num_tasks_per_node should always be one. If
@@ -154,7 +180,14 @@ class HelloWorldTestMPIOpenMP(HelloWorldBaseTest):
             'PrgEnv-cray': ' -homp ',
             'PrgEnv-gnu': ' -fopenmp ',
             'PrgEnv-intel': ' -qopenmp ',
-            'PrgEnv-pgi': ' -mp '
+            'PrgEnv-pgi': ' -mp ',
+            'PrgEnv-c2sm-cray': ' -homp ',
+            'PrgEnv-c2sm-gnu': ' -fopenmp ',
+            'PrgEnv-c2sm-pgi': ' -mp ',
+            'PrgEnv-c2sm-gnu-cpp': ' -fopenmp ',
+            'PrgEnv-c2sm-cray-gpu': ' -homp ',
+            'PrgEnv-c2sm-gnu-gpu': ' -fopenmp ',
+            'PrgEnv-c2sm-pgi-gpu': ' -mp '
         }
         self.num_tasks = 6
         self.num_tasks_per_node = 3
