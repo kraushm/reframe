@@ -818,7 +818,7 @@ site_configuration = {
                 'arolla', 'tsa'
             ],
             'modules': [
-                'PrgEnv-pgi/19.9-nocuda'
+                'PrgEnv-pgi/20.4-nocuda'
             ],
             'cc': 'pgcc',
             'cxx': 'pgc++',
@@ -830,7 +830,7 @@ site_configuration = {
                 'arolla', 'tsa'
             ],
             'modules': [
-                'PrgEnv-pgi/19.9'
+                'PrgEnv-pgi/20.4'
             ],
             'cc': 'pgcc',
             'cxx': 'pgc++',
@@ -842,7 +842,7 @@ site_configuration = {
                 'arolla', 'tsa'
             ],
             'modules': [
-                'PrgEnv-pgi/19.9'
+                'PrgEnv-pgi/20.4'
             ],
             'cc': 'mpicc',
             'cxx': 'mpicxx',
@@ -854,7 +854,7 @@ site_configuration = {
                 'arolla', 'tsa'
             ],
             'modules': [
-                'PrgEnv-pgi/19.9-nocuda'
+                'PrgEnv-pgi/20.4-nocuda'
             ],
             'cc': 'mpicc',
             'cxx': 'mpicxx',
