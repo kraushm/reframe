@@ -37,7 +37,8 @@ class GpuDirectCudaCheck(rfm.RegressionTest):
             self.variables = {
                 'G2G': '1',
             }
-            self.build_system.cxxflags = ['-ccbin', 'mpicxx', '-arch=sm_70']
+            self.build_system.cxxflags = ['-ccbin', 'mpicxx', '-arch=sm_70',
+                                          '--allow-unsupported-compiler']
 
         self.num_tasks = 2
         self.num_gpus_per_node = 1
